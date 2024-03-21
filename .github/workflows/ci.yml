@@ -50,6 +50,12 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
+      - name: Setup Fake Data
+        run: |
+          mkdir -p nexus/com/example/module/1.0.0
+          touch nexus/com/example/module/1.0.0/module-1.0.0.pom
+          touch nexus/com/example/module/1.0.0/module-1.0.0.jar
+
       - name: Test Local Action
         id: test-action
         uses: ./
@@ -57,3 +63,4 @@ jobs:
           username: test
           password: test
           staging-profile-name: test
+          generate-checksums: true
