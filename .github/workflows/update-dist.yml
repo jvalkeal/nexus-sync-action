@@ -2,6 +2,9 @@ name: Update Dist
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - gh9-work1
 
 permissions:
   contents: write
